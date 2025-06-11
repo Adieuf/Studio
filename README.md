@@ -34,7 +34,7 @@ CLIENT_SECRET_NAME=CLIENT-SECRET
 Install dependencies and run:
 
 ```bash
-pip install fastapi uvicorn requests python-dotenv
+pip install fastapi uvicorn requests python-dotenv azure-identity azure-keyvault-secrets
 uvicorn backend.main:app --reload
 ```
 
