@@ -31,11 +31,16 @@ KEY_VAULT_URI=
 CLIENT_SECRET_NAME=CLIENT-SECRET
 ```
 
+The Bicep deployment creates an Azure Key Vault and a managed identity for the
+API. Store the `CLIENT_SECRET` for your Azure AD application in the vault using
+the name specified by `CLIENT_SECRET_NAME`. The `KEY_VAULT_URI` environment
+variable should point at this vault when running locally.
+
 Install dependencies and run:
 
 ```bash
-pip install fastapi uvicorn requests python-dotenv
-uvicorn backend.main:app --reload
+pip install fastapi uvicorn requests python-dotenv azure-identity azure-keyvault-secrets
+python -m uvicorn backend.main:app --reload
 ```
 
 ## Deployment
